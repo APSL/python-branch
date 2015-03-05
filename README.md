@@ -1,2 +1,2 @@
 # python-branch
-A branch.io client in Python
+A basic [branch.io](https://branch.io) client in Python.
