@@ -17,7 +17,7 @@ class BranchClient(object):
         self.app_id = app_id
         self.branch_api_url = 'https://api.branch.io'
 
-    def create_branch_link(self, data={}, alias=None, link_type=1, duration=None, identity=None, campaign=None,
+    def create_branch_link(self, data={}, alias=None, link_type=None, duration=None, identity=None, campaign=None,
                            feature=None, channel=None, stage=None):
         """
         Creates a branch.io link
@@ -35,9 +35,10 @@ class BranchClient(object):
         url_endpoint = '{0}/v1/url'.format(self.branch_api_url)
         payload = {
             'app_id': str(self.app_id),
-            'data': data,
-            'type': link_type
+            'data': data
         }
+        if link_type is not None:
+            payload.update({'type': link_type})
         if alias is not None:
             payload.update({'alias': alias})
         if duration is not None:
