@@ -37,20 +37,20 @@ class BranchClient(object):
             'app_id': str(self.app_id),
             'data': data
         }
-        if link_type is not None:
+        if link_type:
             payload.update({'type': link_type})
-        if alias is not None:
+        if alias:
             payload.update({'alias': alias})
-        if duration is not None:
+        if duration:
             payload.update({'duration': duration})
-        if identity is not None:
+        if identity:
             payload.update({'identity': str(identity)})
-        if campaign is not None:
+        if campaign:
             payload.update({'campaign': campaign})
-        if feature is not None:
+        if feature:
             payload.update({'feature': feature})
-        if channel is not None:
+        if channel:
             payload.update({'channel': channel})
-        if stage is not None:
+        if stage:
             payload.update({'stage': stage})
         return requests.post(url_endpoint, json=payload)

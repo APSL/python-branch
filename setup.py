@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='branch_client',
       packages=['branch_client'],
-      version='0.0.1',
+      version='0.0.2',
       description='A Python Branch.io client',
       author='Alvaro Medina Ballester',
       author_email='amedina@apsl.net',
